@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object oriented programming practice</title>
+</head>
+<body>
+    <script>
+        class Person {
+            constructor (name, surname, age, mother, father) {
+                this.name = name;
+                this.surname = surname;
+                this.age = age;
+                this.mother = mother;
+                this.father = father;
+            }
+            info(){
+                let info = `Мое имя ${this.name}
+                Мой возраст ${this.age}\n`;
+                if(this.mother !== undefined) {
+                    info +=  `Мама ${this.mother.name}\n`;
+                    if(this.mother.mother !== undefined) {
+                        info += `Бабушка по маме ${this.mother.mother.name}\n`;
+                    }
+                    if(this.mother.father !== undefined) {
+                        info += `Дедушка по маме ${this.mother.father.name}\n`;
+                    }
+                }
+                if(this.father !== undefined) {
+                    info += `Папа ${this.father.name}\n`;
+                    if(this.father.mother !== undefined) {
+                        info += `Бабушка по папе ${this.father.mother.name}\n`;
+                    }
+                    if (this.father.father !== undefined) {
+                        info += `Дедушка по папе ${this.father.father.name}\n`
+                    } 
+                }
+                console.log(info);
+            }
+        }
+
+        let human1 = new Person ('Иван', 'Иванов', 78)
+        let human2 = new Person ('Анна', 'Иванова', 75)
+
+        let human3 = new Person ('Антон', 'Васильев', 73)
+        let human4 = new Person ('Василиса', 'Васильева', 69)
+
+        let human5 = new Person('Роман', 'Иванов', 45, human2, human1)
+        let human6 = new Person('Марина', 'Иванова', 40, human4, human3)
+
+        let human7 = new Person('Вова', 'Иванов', 18, human6, human5)
+    </script>
+</body>
+</html>
