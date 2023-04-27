@@ -22,19 +22,19 @@
                 if(this.mother !== undefined) {
                     info +=  `Мама ${this.mother.name}\n`;
                     if(this.mother.mother !== undefined) {
-                        info += `Бабушка по маме ${this.mother.mother.name}\n`;
+                        info += `Бабушку по маме зовут ${this.mother.mother.name}\n`;
                     }
                     if(this.mother.father !== undefined) {
-                        info += `Дедушка по маме ${this.mother.father.name}\n`;
+                        info += `Дедушку по маме зовут ${this.mother.father.name}\n`;
                     }
                 }
                 if(this.father !== undefined) {
                     info += `Папа ${this.father.name}\n`;
                     if(this.father.mother !== undefined) {
-                        info += `Бабушка по папе ${this.father.mother.name}\n`;
+                        info += `Бабушку по папе зовут ${this.father.mother.name}\n`;
                     }
                     if (this.father.father !== undefined) {
-                        info += `Дедушка по папе ${this.father.father.name}\n`
+                        info += `Дедушку по папе зовут ${this.father.father.name}\n`
                     } 
                 }
                 console.log(info);
